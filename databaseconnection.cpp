@@ -23,7 +23,6 @@ MYSQL *mysql_connection_setup(struct connection_details mysql_details){
 //Utility function to covert from QString to char array
 //since mysql_query() accpets only char array
 void QstringToCharArray(QString stringToConvert, char newString[]){
-    //int size = strlen(newString);
     const QByteArray temp = stringToConvert.toUtf8();
     newString[qMin(99, temp.size())] = '\0';
     std::copy(temp.constBegin(),
